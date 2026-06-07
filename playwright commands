@@ -1,0 +1,91 @@
+npx playwright test
+    Runs the end-to-end tests.
+
+  npx playwright test --ui
+    Starts the interactive UI mode.
+
+  npx playwright test --project=chromium
+    Runs the tests only on Desktop Chrome.
+
+  npx playwright test example
+    Runs the tests in a specific file.
+
+  npx playwright test --debug
+    Runs the tests in debug mode.
+
+  npx playwright codegen
+    Auto generate tests with Codegen.
+
+We suggest that you begin by typing:
+
+    npx playwright test
+
+And check out the following files:
+  - .\tests\example.spec.ts - Example end-to-end test
+  - .\playwright.config.ts - Playwright Test configuration
+
+Visit https://playwright.dev/docs/intro for more information
+
+
+//
+**********************methods**********************
+await expect(selloc).toBeVisible();
+await expect (selloc).toHaveText("Germany");
+await expect(parlot).toContainText("Maria Anders");
+await expect(chilloc).toHaveCount(3);
+await bproduct.allTextContents();
+expect(productcount).toBeGreaterThan(0);
+await expect(ansloc).toHaveAttribute('id',"customers");
+await dv.click();  
+await page.waitForTimeout(2000);
+
+****checkbox*****
+        await day.check();
+        await expect(day).toBeChecked();
+        await day.uncheck();
+        await expect(day).not.toBeChecked();
+
+**********drop down********
+         expect(options1).toContain("India");
+
+********loops**************
+forEach(function(element,index))
+const options1=(await drop1.allTextContents()).map(ele => ele.trim());
+const originallist=[...colorop]; //[...] is called as spread operator it will not change the original array while sorting
+
+******fileupload****
+setisetInputFiles=await page.locator("#multipleFilesInput").setInputFiles(['uploadfiles/test2.png','uploadfiles/test1.txt'])
+
+***********codegen*********
+npx playwright codegen
+npx playwright codegen -o /tests/codegen.spec.ts
+npx playwright codegen -o codegenmobile.spec.ts --device "Galaxy S9+"
+npx playwright codegen -o codegenmobile.spec.ts --b  "Galaxy S9+"  //--b or -- browser
+
+npx playwright test 35screenshots_on.spec.ts --headed --trace on // to enable trace while running the test
+ context.tracing.stop({path:'trce.zip'}); need to stop at the end of the test run 
+ npx playwright show-trace trace_1.zip    // to view the trace 
+ https://trace.playwright.dev/ //to view the trace from browser by draging the zip file 
+context.tracing.start({screenshots:true,snapshots:true}); // to enable trace with in the test
+
+npx playwright test 35screenshots_on.spec.ts --headed --retries=3 // for no of retries
+
+npx playwright test 36grouping.spec.ts --grep Group1 // for grouping the test cases
+
+ npx playwright test 36Tags.spec.ts --grep "@sanity" // tags to run only sanity test cases
+
+
+ ********npm install*******
+ npm install csv-parse / to work with csv files
+ npm install @axe-core/playwright // for accessibility testing
+ //npm install xlsx // to run excel files
+ //npm install -D allure-playwright // to install allure reports //tp uninstall -npm uinstall -D allure-playwright
+ // npm install -g allure-commandline
+ npm install @faker-js/faker
+ allure generate ./allure-results -o ./allure-report --clean //need to run after all executions to generte report from allure files
+ allure open ./allure-report //to view allore reports
+
+ ***********playwright installation******************
+ node.js , npm, visual studio
+Run below scripts
+1- npm init playwright@latest

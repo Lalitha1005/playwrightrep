@@ -1,0 +1,4 @@
+Family details are below:
+Name of the person is: Naren
+Age of the person is : 43
+Gender of the person is : M
